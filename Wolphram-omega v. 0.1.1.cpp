@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstdlib>
 
@@ -15,16 +16,39 @@ int NWD(int a, int b)
    return a;
 }
 
+float potega(float a,int b)
+{
+    float pom=a;
+    if (b==0 && a!=0)
+    {
+        return 1;
+    }
+    if (b>0)
+    {
+        for (int i=1;i<b;i++)
+           {
+               pom*=a;
+           }
+           return pom;
+    }
+    if (b<0)
+    {
+        pom=1/pom;
+        return potega(pom,b*(-1));
+    }
+}
+
 int main()
 {
     int z;
     
-    while(z != 3){
+    while(z != 4){
         
         cout<<"Wybierz operacjê jak¹ chcesz wykonaæ wpisuj¹c odpowiedni¹ cyfrê wed³ug rozpisanych poni¿ej:"<<endl
             <<"1. Dodawanie"<<endl
             <<"2. Najwiekszy Wspolny Dzielnik"<<endl
-            <<"3. Zakoncz program"<<endl;
+            <<"3. Potęgowanie"<<endl
+            <<"4. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -46,8 +70,16 @@ int main()
                 break;
             
             case 3:
+
+                float x;
+                int y;
+                cout<<"Podaj liczbe i do której potęgi chcesz ja podniesc"<<endl;
+                cin>>x>>y;
+                cout>>x>>" do potegi ">>y>>" wynosi ">> potega(x,y)>>endl;
+                break;
+
+            case 4:
                 cout<<"Program zakonczy zadanie"<<endl;
-                return 0;
                 break;
             
             default: 
