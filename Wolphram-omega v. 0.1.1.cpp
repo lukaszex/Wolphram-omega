@@ -9,6 +9,21 @@ float dodaj(float a, float b)
     return a+b;
 }
 
+float odejmij(float a, float b)
+{
+    return a-b;
+}
+
+float mnoz(float a, float b)
+{
+    return a*b;
+}
+
+float dziel(float a, float b)
+{
+    return a/b;
+}
+
 int NWD(int a, int b)
 {
    if(a!=b)
@@ -48,7 +63,10 @@ int main()
             <<"1. Dodawanie"<<endl
             <<"2. Najwiekszy Wspolny Dzielnik"<<endl
             <<"3. Potęgowanie"<<endl
-            <<"4. Zakoncz program"<<endl;
+            <<"4. odejmowanie"<<endl
+            <<"5. Mnozenie"<<endl
+            <<"6. Dzielenie"<<endl
+            <<"7. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -77,8 +95,31 @@ int main()
                 cin>>x>>y;
                 cout>>x>>" do potegi ">>y>>" wynosi ">> potega(x,y)>>endl;
                 break;
-
+                
             case 4:
+                float a, b;
+                cout<<"Podaj liczby na ktorych chcesz wykonać dzialanie (najpierw odjemna)"<<endl;
+                cin>>a>>b;
+                cout<<"Roznica liczb "<<a<<" oraz "<<b<<" to "<<odejmij(a,b);
+                break;
+                
+            case 5:
+                float a,b;
+                cout<<"Podaj czynniki mnożenia:"<<endl;
+                cin>>a>>b;
+                cout<<"Iloczyn tych liczb to: "<<mnoz(a,b);
+                break;
+                
+            case 6:
+                float a,b;
+                cout<<"Podaj dzielna:"<<endl;
+                cin>>a;
+                cout<<"Podaj dzielnik:"<<endl;
+                cin>>b;
+                cout<<"Wynik dzielenia to: "<<dziel(a,b);
+                break;
+
+            case 7:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
             
