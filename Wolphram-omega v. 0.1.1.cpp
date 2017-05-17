@@ -56,13 +56,13 @@ float potega(float a,int b)
 int main()
 {
     int z;
-    
-    while(z != 4){
-        
-        cout<<"Wybierz operacjê jak¹ chcesz wykonaæ wpisuj¹c odpowiedni¹ cyfrê wed³ug rozpisanych poni¿ej:"<<endl
+
+    while(z != 7){
+
+        cout<<"Wybierz operacje jaka chcesz wykonac wpisujac odpowiednia cyfre wedlug rozpisanych ponizej:"<<endl
             <<"1. Dodawanie"<<endl
             <<"2. Najwiekszy Wspolny Dzielnik"<<endl
-            <<"3. Potęgowanie"<<endl
+            <<"3. Potegowanie"<<endl
             <<"4. odejmowanie"<<endl
             <<"5. Mnozenie"<<endl
             <<"6. Dzielenie"<<endl
@@ -74,7 +74,7 @@ int main()
 
             case 1:
                 float a, b, w;
-                cout<<"Podaj liczby, które chcesz dodaæ:"<<endl;
+                cout<<"Podaj liczby, które chcesz dodac:"<<endl;
                 cin>>a>>b;
                 w=dodaj(a,b);
                 cout<<"Wynik to:"<<w<<endl;
@@ -84,48 +84,49 @@ int main()
                 int c, d;
                 cout<<"Podaj dwie liczby: ";
                 cin>>a>>b;
-                cout<<"NWD("<<a<<","<<b<<") = "<<NWD(a,b)<<endl;  
+                cout<<"NWD("<<a<<","<<b<<") = "<<NWD(a,b)<<endl;
                 break;
-            
+
             case 3:
 
                 float x;
                 int y;
-                cout<<"Podaj liczbe i do której potęgi chcesz ja podniesc"<<endl;
+                cout<<"Podaj liczbe i do ktorej potegi chcesz ja podniesc"<<endl;
                 cin>>x>>y;
-                cout>>x>>" do potegi ">>y>>" wynosi ">> potega(x,y)>>endl;
+                cout<<x<<" do potegi "<<y<<" wynosi "<< potega(x,y)<<endl;
                 break;
-                
+
             case 4:
-                float a, b;
-                cout<<"Podaj liczby na ktorych chcesz wykonać dzialanie (najpierw odjemna)"<<endl;
-                cin>>a>>b;
-                cout<<"Roznica liczb "<<a<<" oraz "<<b<<" to "<<odejmij(a,b);
+                float e, f;
+                cout<<"Podaj liczby na ktorych chcesz wykonac dzialanie (najpierw odjemna)"<<endl;
+                cin>>e>>f;
+                cout<<"Roznica liczb "<<e<<" oraz "<<f<<" to "<<odejmij(e,f);
                 break;
-                
+
             case 5:
-                float a,b;
-                cout<<"Podaj czynniki mnożenia:"<<endl;
-                cin>>a>>b;
-                cout<<"Iloczyn tych liczb to: "<<mnoz(a,b);
+                float g,h;
+                cout<<"Podaj czynniki mnozenia:"<<endl;
+                cin>>g>>h;
+                cout<<"Iloczyn tych liczb to: "<<mnoz(g,h)<<endl;
                 break;
-                
+
             case 6:
-                float a,b;
+                float i,j;
                 cout<<"Podaj dzielna:"<<endl;
-                cin>>a;
+                cin>>i;
                 cout<<"Podaj dzielnik:"<<endl;
-                cin>>b;
-                cout<<"Wynik dzielenia to: "<<dziel(a,b);
+                cin>>j;
+                cout<<"Wynik dzielenia to: "<<dziel(i,j)<<endl;
                 break;
 
             case 7:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
-            
-            default: 
-                cout<<"Wprowadzono zla liczbe"<<endl; 
+
+            default:
+                cout<<"Wprowadzono zla liczbe"<<endl;
                 break;
+    }
     }
     return 0;
 }
