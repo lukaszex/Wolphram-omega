@@ -53,11 +53,21 @@ float potega(float a,int b)
     }
 }
 
+float mnozmacierz(float m1[i][j],float m2[j][k])
+{
+    float Wynik[i][k];
+    for(int m=0;m<i;m++)
+        for(int d=0;d<k;d++)
+            for(int l=0;l<j;l++)
+                Wynik[m][d]+=m1[m][l]*m2[l][d];
+    return Wynik;
+}
+    
 int main()
 {
     int z;
 
-    while(z != 7){
+    while(z != 8){
 
         cout<<"Wybierz operacje jaka chcesz wykonac wpisujac odpowiednia cyfre wedlug rozpisanych ponizej:"<<endl
             <<"1. Dodawanie"<<endl
@@ -66,7 +76,8 @@ int main()
             <<"4. odejmowanie"<<endl
             <<"5. Mnozenie"<<endl
             <<"6. Dzielenie"<<endl
-            <<"7. Zakoncz program"<<endl;
+            <<"7. Mnozenie macierzy"<<endl
+            <<"8. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -120,6 +131,34 @@ int main()
                 break;
 
             case 7:
+                int k,l,m,n;
+                cout<<"Podaj wymiary macierzy 1.:";
+                cin>>k>>l;
+                cout<<"Podaj wymiary macierzy 2.:";
+                cin>>m>>n;
+                if(l!=m){
+                    cout<<"Nie można mnozyc";
+                    break;
+                }
+                float mac1[k][l];
+                float mac2[m][n];
+                cout<<"Podaj elementy macierzy 1.:";
+                for(int o=0;i<k;o++)
+                    for(int p=0;p<l;p++)
+                        cin>>mac1[o][p];
+                cout<<"Podaj elementy macierzy 2.:";
+                for(o=0;i<m;o++)
+                    for(p=0;p<n;p++)
+                        cin>>mac2[o][p];
+                float wynik[k][n];
+                wynik=mnozmacierz(mac1,mac2);
+                for(o=0;i<k;o++)
+                {
+                    for(p=0;p<n;p++)
+                        cout<<wynik[o][p];
+                    endl;
+                }
+            case 8:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
 
