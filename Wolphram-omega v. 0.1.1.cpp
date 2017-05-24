@@ -62,12 +62,18 @@ float mnozmacierz(float m1[i][j],float m2[j][k])
                 Wynik[m][d]+=m1[m][l]*m2[l][d];
     return Wynik;
 }
+float dodajmacierz(float m1[i][j],float m2[i][j])
+{
+    for(int r=0;r<i;r++)
+        for(int s=0;s<j;s++)
+            m1[r][s]+=m2[r][s];
+    return m1;
     
 int main()
 {
     int z;
 
-    while(z != 8){
+    while(z != 9){
 
         cout<<"Wybierz operacje jaka chcesz wykonac wpisujac odpowiednia cyfre wedlug rozpisanych ponizej:"<<endl
             <<"1. Dodawanie"<<endl
@@ -77,7 +83,8 @@ int main()
             <<"5. Mnozenie"<<endl
             <<"6. Dzielenie"<<endl
             <<"7. Mnozenie macierzy"<<endl
-            <<"8. Zakoncz program"<<endl;
+            <<"8. Dodawanie macierzy"<<endl
+            <<"9. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -158,7 +165,29 @@ int main()
                         cout<<wynik[o][p];
                     endl;
                 }
+                break;
             case 8:
+                int t,u;
+                cout<<"Podaj wymiary macierzy";
+                cin>>t>>u;
+                float macierz1[t][u];
+                float macierz2[t][u];
+                cout<<"Podaj elementy macierzy 1.:";
+                for(int o=0;o<t;o++)
+                    for(int p=0;p<u;p++)
+                        cin>>macierz1[o][p];
+                cout<<"Podaj elementy macierzy 2.:";
+                for(o=0;o<t;o++)
+                    for(p=0;p<u;p++)
+                        cin>>macierz2[o][p];
+                macierz1=dodajmacierz(macierz1, macierz2);
+                for(o=0;o<t;o++){
+                    for(p=0;p<u;p++)
+                        cout<<macierz1[o][p];
+                    cout<< endl;
+                }
+                break;
+            case 9:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
 
