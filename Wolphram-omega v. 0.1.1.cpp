@@ -77,11 +77,16 @@ float odejmijmacierz(float m1[i][j], float[i][j])
     return m1;
 }
   
+float wyznacznikmacierzy( float m[2][2])
+{
+    float wyznacznik=(m[0][0]*m[1][1])-(m[1][0]*m[0][1]);
+    return wyznacznik;
+}
 int main()
 {
     int z;
 
-    while(z != 10){
+    while(z != 11){
 
         cout<<"Wybierz operacje jaka chcesz wykonac wpisujac odpowiednia cyfre wedlug rozpisanych ponizej:"<<endl
             <<"1. Dodawanie"<<endl
@@ -93,7 +98,8 @@ int main()
             <<"7. Mnozenie macierzy"<<endl
             <<"8. Dodawanie macierzy"<<endl
             <<"9. Odejmowanie macierzy"<<endl
-            <<"10. Zakoncz program"<<endl;
+            <<"10. Wyznacznik macierzy 2x2"<<endl
+            <<"11. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -203,12 +209,12 @@ int main()
                 float macierz1[t][u];
                 float macierz2[t][u];
                 cout<<"Podaj elementy macierzy 1.:";
-                for(int o=0;o<t;o++)
-                    for(int p=0;p<u;p++)
+                for(int o=0;o<v;o++)
+                    for(int p=0;p<w;p++)
                         cin>>macierz1[o][p];
                 cout<<"Podaj elementy macierzy 2.:";
-                for(o=0;o<t;o++)
-                    for(p=0;p<u;p++)
+                for(o=0;o<v;o++)
+                    for(p=0;p<w;p++)
                         cin>>macierz2[o][p];
                 macierz1=odejmijmacierz(macierz1, macierz2);
                 for(o=0;o<t;o++){
@@ -218,6 +224,15 @@ int main()
                 }
                 break;
             case 10:
+                int mac[2][2];
+                cout<<"Podaj elementy macierzy 2x2:";
+                for(o=0;o<2;o++)
+                    for(p=0;p<2;p++)
+                        cin>>mac[o][p];
+                int z=wyznacznikmacierzy(mac);
+                cout<<z;
+                break;
+            case 11:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
 
