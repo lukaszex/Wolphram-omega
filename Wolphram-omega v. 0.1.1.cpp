@@ -53,7 +53,7 @@ float potega(float a,int b)
     }
 }
 
-float mnozmacierz(float m1[i][j],float m2[j][k])
+float mnozmacierz(float m1[i][j],float m2[j][k], int i, int j, int k)
 {
     float Wynik[i][k];
     for(int m=0;m<i;m++)
@@ -62,14 +62,14 @@ float mnozmacierz(float m1[i][j],float m2[j][k])
                 Wynik[m][d]+=m1[m][l]*m2[l][d];
     return Wynik;
 }
-float dodajmacierz(float m1[i][j],float m2[i][j])
+float dodajmacierz(float m1[i][j],float m2[i][j], int i, int j)
 {
     for(int r=0;r<i;r++)
         for(int s=0;s<j;s++)
             m1[r][s]+=m2[r][s];
     return m1;
 }
-float odejmijmacierz(float m1[i][j], float[i][j])
+float odejmijmacierz(float m1[i][j], float[i][j], int i, int j)
 {
     for(int r=0;r<i;r++)
         for(int s=0;s<j;s++)
@@ -81,6 +81,14 @@ float wyznacznikmacierzy( float m[2][2])
 {
     float wyznacznik=(m[0][0]*m[1][1])-(m[1][0]*m[0][1]);
     return wyznacznik;
+}
+
+float mnozmacierzprzezskalar(float mac[i][j], int i, int j, int n)
+{
+    for(int r=0;r<i;r++)
+        for(int s=0;s<j;s++)
+            mac[r][s]=n*mac[r][s];
+    return mac;
 }
 int main()
 {
@@ -173,7 +181,7 @@ int main()
                     for(p=0;p<n;p++)
                         cin>>mac2[o][p];
                 float wynik[k][n];
-                wynik=mnozmacierz(mac1,mac2);
+                wynik=mnozmacierz(mac1,mac2,k,l,n);
                 for(o=0;i<k;o++)
                 {
                     for(p=0;p<n;p++)
@@ -195,7 +203,7 @@ int main()
                 for(o=0;o<t;o++)
                     for(p=0;p<u;p++)
                         cin>>macierz2[o][p];
-                macierz1=dodajmacierz(macierz1, macierz2);
+                macierz1=dodajmacierz(macierz1, macierz2, t, u);
                 for(o=0;o<t;o++){
                     for(p=0;p<u;p++)
                         cout<<macierz1[o][p];
@@ -205,9 +213,9 @@ int main()
             case 9:
                 int v,w;
                 cout<<"Podaj wymiary macierzy";
-                cin>>t>>u;
-                float macierz1[t][u];
-                float macierz2[t][u];
+                cin>>v>>w;
+                float macierz1[v][w];
+                float macierz2[v][w];
                 cout<<"Podaj elementy macierzy 1.:";
                 for(int o=0;o<v;o++)
                     for(int p=0;p<w;p++)
@@ -216,9 +224,9 @@ int main()
                 for(o=0;o<v;o++)
                     for(p=0;p<w;p++)
                         cin>>macierz2[o][p];
-                macierz1=odejmijmacierz(macierz1, macierz2);
-                for(o=0;o<t;o++){
-                    for(p=0;p<u;p++)
+                macierz1=odejmijmacierz(macierz1, macierz2,v,w);
+                for(o=0;o<v;o++){
+                    for(p=0;p<w;p++)
                         cout<<macierz1[o][p];
                     cout<< endl;
                 }
@@ -233,6 +241,24 @@ int main()
                 cout<<z;
                 break;
             case 11:
+                int wiersz,kolumna, skalar;
+                cout<<"Podaj wymiary macierzy";
+                cin>>wiersz>>kolumna;
+                cout<<"Podaj skalar:";
+                cin>>skalar;
+                float tab[wiersz][kolumna];
+                cout<<"Podaj elementy:";
+                for(o=0;o<wiersz;o++)
+                    for(p=0;p<kolumna;p++)
+                        cin>>tab[o][p];
+                tab=mnozmacierzprzezskalar(tab,wiersz, kolumna,skalar);
+                for(o=0;o<wiersz;o++){
+                    for(p=0;p<kolumna;p++)
+                        cout<<tab[o][p];
+                    cout<<endl;
+                }
+                break;
+            case 12:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
 
