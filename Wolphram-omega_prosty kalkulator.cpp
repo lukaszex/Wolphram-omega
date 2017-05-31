@@ -58,7 +58,7 @@ int main()
 {
     int z;
 
-    while(z != 11){
+    while(z != 7){
 
         cout<<"Wybierz operacje jaka chcesz wykonac wpisujac odpowiednia cyfre wedlug rozpisanych ponizej:"<<endl
             <<"1. Dodawanie"<<endl
