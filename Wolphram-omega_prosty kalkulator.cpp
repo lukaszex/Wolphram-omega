@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
@@ -67,7 +68,8 @@ int main()
             <<"4. odejmowanie"<<endl
             <<"5. Mnozenie"<<endl
             <<"6. Dzielenie"<<endl
-            <<"7. Zakoncz program"<<endl;
+            <<"7. Funkcje trygonometryczne"<<endl
+            <<"8. Zakoncz program"<<endl;
 
         cin>>z;
 
@@ -119,8 +121,34 @@ int main()
                 cin>>j;
                 cout<<"Wynik dzielenia to: "<<dziel(i,j)<<endl;
                 break;
-                
+            
             case 7:
+                float x , i;
+                cout<<"Wybierz funkcję"<<endl
+                <<"1. sinus"<<endl
+                <<"2. cosinus"<<endl
+                <<"3. tangens"<<endl
+                <<"4. cotangens"<<endl;
+                cin>>i;
+                cout<<"Wpisz argument"<<endl;
+                cin>>x;
+                switch (i)
+                {
+                    case 1:
+                        cout<<"Sinus to: "<<sin (x)<<endl;
+                        break;
+                    case 2:
+                        cout<<"Cosinus to: "<<cos (x)<<endl;
+                        break;
+                    case 3:
+                        cout<<"Tangens to: "<<tan (x)<<endl;
+                        break;
+                    case 4:
+                        cout << "Cotangens to: " << 1/(tan (x)) << endl;
+                        break;
+                }
+                
+            case 8:
                 cout<<"Program zakonczy zadanie"<<endl;
                 break;
 
