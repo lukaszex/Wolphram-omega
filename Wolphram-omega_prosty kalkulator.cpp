@@ -123,28 +123,29 @@ int main()
                 break;
             
             case 7:
-                float x , i;
+                float y2;
+                int j2;
                 cout<<"Wybierz funkcję"<<endl
                 <<"1. sinus"<<endl
                 <<"2. cosinus"<<endl
                 <<"3. tangens"<<endl
                 <<"4. cotangens"<<endl;
-                cin>>i;
+                cin>>j2;
                 cout<<"Wpisz argument"<<endl;
-                cin>>x;
-                switch (i)
+                cin>>y2;
+                switch (j2)
                 {
                     case 1:
-                        cout<<"Sinus to: "<<sin (x)<<endl;
+                        cout<<"Sinus to: "<<sin (y2)<<endl;
                         break;
                     case 2:
-                        cout<<"Cosinus to: "<<cos (x)<<endl;
+                        cout<<"Cosinus to: "<<cos (y2)<<endl;
                         break;
                     case 3:
-                        cout<<"Tangens to: "<<tan (x)<<endl;
+                        cout<<"Tangens to: "<<tan (y2)<<endl;
                         break;
                     case 4:
-                        cout << "Cotangens to: " << 1/(tan (x)) << endl;
+                        cout << "Cotangens to: " << 1/(tan (y2)) << endl;
                         break;
                 }
                 
